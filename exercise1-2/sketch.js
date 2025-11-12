@@ -1,32 +1,24 @@
-let myPicker1;
-let myPicker2;
+let colourPicker1;
+let colourPicker2;
 
-function setup(){
+function setup() {
+  createCanvas(400, 400);
 
-createCanvas(400,400);
+  // create two color pickers
+  colourPicker1 = createColorPicker();
+  colourPicker1.position(0, 100);
+
+  colourPicker2 = createColorPicker();
+  colourPicker2.position(width / 2, 100);
 }
 
-colourPicker1.position(0, 100);
-colourPicker2.position(width / 2, 100);
+function draw() {
+  background(colourPicker1.value());
+  fill(colourPicker2.value());
 
+  textSize(20);
+  text('University of York', 200, 55);
+  textSize(100);
+  textAlign(CENTER,CENTER);
 
-
-function draw(){
-
-background(colourPicker1.value());
-fill(colourPicker2.value());
-text(c, 25, 55);
-
-stroke(500)
-rect(25,25,50,20);
-
-stroke(400);
-rect(350,2,50,20);
-
-}
-createColorPicker(){
-colourPicker1.parent(container);
-colourPicker2.parent(container);
-
-}
 }
